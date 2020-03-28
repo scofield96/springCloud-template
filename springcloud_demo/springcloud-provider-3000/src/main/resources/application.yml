@@ -1,0 +1,12 @@
+server:
+  port: 3000
+
+spring:
+  application:
+    name: springcloud-provider #provider 的微服务名称必须使用同一个名称才能构成一个集群，否则将不会认定为是属于同一个集群。
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:5000/eureka
+

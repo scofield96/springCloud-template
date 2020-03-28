@@ -1,0 +1,20 @@
+server:
+  port: 9000
+  servlet:
+    context-path: /springcloud  #先输入此路径再输入zuul的prefix
+spring:
+  application:
+    name: zuul-gateway
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:5000/eureka/
+
+zuul:
+  routes:
+    employee:
+      serviceId: springcloud-feign-consumer
+      path: /zuul-emp/**
+  ignored-services: '*'   #忽略所有微服务名称
+  prefix: /scofield       #访问路径添加统一前缀

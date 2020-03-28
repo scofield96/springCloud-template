@@ -1,0 +1,17 @@
+server:
+  port: 1000
+
+spring:
+  application:
+    name: springcloud-provider
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:5000/eureka
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
